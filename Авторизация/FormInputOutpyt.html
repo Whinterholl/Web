@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Форма входа/регистрации</title>
+    <link rel="stylesheet" href="page.css">
+
+  </head>
+
+  <body>
+
+    <div id="cont">
+
+      <div class="tabs">
+        <div id="btn"></div>
+        <button type="button_log" class="toggle-btn" onclick="login()">Войти</button>
+        <button type="button_reg" class="toggle-btn-reg" onclick="registration()">Зарегистрироваться</button>
+      </div>
+
+      <form id="login" class="form">
+        <input type="text" class="input-filed" placeholder="Логин">
+        <input type="password" class="input-filed" placeholder="Пароль">
+        <button type="submit" class="submit-btn">Вход</button>
+      </form>
+
+      <form id="register" class="form">
+        <input type="text" class="input-filed" placeholder="Логин">
+        <input type="password" class="input-filed" placeholder="Пароль">
+        <input type="password" class="input-filed" placeholder="Повторите пароль">
+        <button type="submit" class="submit-btn">Регистрация</button>
+      </form>
+      
+    </div>
+
+    <script src="newPosition.js"></script>
+
+  </body>
+
+</html>
