@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Profiles</title>
+</head>
+<body>
+<h1>Client Profiles</h1>
+<div class="container">
+    {% if clients %}
+    {% for client in clients %}
+    <div class="card">
+        <h2>{{ client.username }}</h2>
+        <p><span class="label">First Name:</span> {{ client.first_name }}</p>
+        <p><span class="label">Last Name:</span> {{ client.last_name }}</p>
+        <p><span class="label">Email:</span> {{ client.email }}</p>
+        <p><span class="label">Date Joined:</span> {{ client.date_joined }}</p>
+        <p><span class="label">ID:</span> {{ client.id }}</p>
+    </div>
+    {% endfor %}
+    {% else %}
+    <p class="no-data">No clients found</p>
+    {% endif %}
+</div>
+</body>
+</html>
