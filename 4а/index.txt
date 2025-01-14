@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Profiles</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #1a1a1a;
+            color: #e0e0e0;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #f5a623;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .card {
+            background-color: #2a2a2a;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+            width: 300px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+        }
+
+        .card h2 {
+            margin: 0;
+            font-size: 1.5em;
+            color: #f5a623;
+            text-align: center;
+        }
+
+        .card p {
+            margin: 10px 0;
+            font-size: 0.9em;
+            color: #ccc;
+        }
+
+        .card .label {
+            font-weight: bold;
+            color: #e0e0e0;
+        }
+
+        .no-data {
+            text-align: center;
+            font-style: italic;
+            color: #888;
+            padding: 20px 0;
+        }
+    </style>
+</head>
+<body>
+<h1>Client Profiles</h1>
+<div class="container">
+    {% if clients %}
+    {% for client in clients %}
+    <div class="card">
+        <h2>{{ client.username }}</h2>
+        <p><span class="label">First Name:</span> {{ client.first_name }}</p>
+        <p><span class="label">Last Name:</span> {{ client.last_name }}</p>
+        <p><span class="label">Email:</span> {{ client.email }}</p>
+        <p><span class="label">Date Joined:</span> {{ client.date_joined }}</p>
+        <p><span class="label">ID:</span> {{ client.id }}</p>
+    </div>
+    {% endfor %}
+    {% else %}
+    <p class="no-data">No clients found</p>
+    {% endif %}
+</div>
+</body>
+</html>
